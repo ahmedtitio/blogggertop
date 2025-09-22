@@ -1,0 +1,84 @@
+/***********************************************
+ * Organized theme skin (extracted)
+ * Keep this file as "skin.css" and host it where your theme can load it.
+ * Note: Blogger's b:skin MUST contain CSS; if you prefer, paste this back into b:skin.
+ ***********************************************/
+
+/* Theme variables */
+:root{
+  --bg: #0f1620;
+  --surface: #0b1116;
+  --accent: #029dbc;
+  --text: #ffffff;
+  --muted: #9fb3bd;
+  --container-width: 1170px;
+}
+
+/* Light theme variables */
+[data-theme='light'] {
+  --bg: #ffffff;
+  --surface: #f5f7f9;
+  --accent: #0b84ff;
+  --text: #111827;
+  --muted: #6b7280;
+}
+
+/* High contrast theme variables */
+[data-theme='high-contrast'] {
+  --bg: #000000;
+  --surface: #000000;
+  --accent: #ffde00;
+  --text: #ffffff;
+  --muted: #ffffff;
+}
+
+html, body { background: var(--bg); color: var(--text); }
+
+/* Normalize & basics */
+html{font-size:62.5%;}
+body{font-family:'Cairo', Arial, sans-serif; font-size:1.4rem; line-height:1.6; margin:0; background:var(--bg); color:var(--text);}
+a{color:var(--accent);}
+
+/* Layout helpers */
+.container{max-width:var(--container-width); margin:0 auto; padding:0 15px; box-sizing:border-box}
+.row{display:flex; flex-wrap:wrap; margin:0 -15px}
+.col{padding:0 15px}
+
+/* Header */
+.header-navbar{background:var(--surface); color:var(--text); box-shadow:0 1px 8px rgba(0,0,0,0.05)}
+.header-navbar .menu a{color:var(--text)}
+
+/* Slider (clean, full-width single-slide) */
+.lucodeia-fullcarousel{width:100%; margin:0; padding:0; box-sizing:border-box; position:relative; overflow:hidden;}
+.lucodeia-fullcarousel .viewport{width:100%; overflow:hidden}
+.lucodeia-fullcarousel .stage{display:flex; gap:0; transition:transform .6s cubic-bezier(.22,.9,.12,1);}
+.lucodeia-fullcarousel .item{flex:0 0 100%; min-width:100%; height:420px; position:relative; overflow:hidden; display:flex; align-items:flex-end}
+.lucodeia-fullcarousel .slide-link{position:absolute; inset:0; background-size:cover; background-position:center; z-index:1}
+.lucodeia-fullcarousel .overlay{position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.32)60%, rgba(0,0,0,0.6)100%); z-index:2}
+.lucodeia-fullcarousel .meta{position:relative; z-index:3; padding:20px 28px; width:100%; box-sizing:border-box; text-align:left;}
+.lucodeia-fullcarousel .title-box{display:inline-block; background:rgba(0,0,0,0.48); padding:12px 16px; border-radius:8px;}
+.lucodeia-fullcarousel .title-box h1{margin:0; font-size:clamp(1.3rem, 3.0vw, 2.2rem); font-weight:800; color:var(--text); line-height:1.05}
+.lucodeia-fullcarousel .subtitle{margin-top:8px; display:inline-block; background:rgba(0,0,0,0.18); padding:8px 12px; border-radius:6px; font-weight:700}
+.lucodeia-fullcarousel .dots{position:absolute; bottom:12px; left:50%; transform:translateX(-50%); z-index:6; display:flex; gap:8px}
+.lucodeia-fullcarousel .dot{width:10px; height:10px; border-radius:50%; background:rgba(255,255,255,0.45); cursor:pointer}
+.lucodeia-fullcarousel .dot.active{background:var(--accent)}
+
+@media (max-width:900px){ .lucodeia-fullcarousel .item{height:340px} }
+@media (max-width:480px){ .lucodeia-fullcarousel .item{height:220px} .lucodeia-fullcarousel .meta{padding:12px} }
+
+/* Floating theme controls (small UI) */
+.theme-control-btn{position:fixed; right:18px; bottom:18px; z-index:9999; background:var(--surface); color:var(--text); border-radius:50%; width:48px; height:48px; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(0,0,0,0.28); cursor:pointer}
+.theme-panel{position:fixed; right:18px; bottom:78px; z-index:9999; background:var(--surface); color:var(--text); padding:12px; border-radius:10px; box-shadow:0 12px 34px rgba(0,0,0,0.32); width:270px; display:none}
+.theme-panel h4{margin:0 0 8px 0; font-size:1.25rem}
+.theme-panel label{display:block; margin:8px 0; font-size:0.95rem}
+.theme-panel input[type='color']{width:44px; height:32px; border:0; padding:0; margin-left:8px; vertical-align:middle}
+.theme-panel .row{display:flex; align-items:center; justify-content:space-between}
+.theme-panel .actions{display:flex; gap:8px; margin-top:10px}
+.btn{background:var(--accent); color:var(--text); padding:8px 10px; border-radius:6px; border:0; cursor:pointer}
+.btn.secondary{background:transparent; border:1px solid rgba(255,255,255,0.12)}
+
+/* Footer */
+.footer{padding:30px 0; background:var(--surface); color:var(--muted)}
+
+/* Misc small helpers */
+.hidden{display:none!important}
