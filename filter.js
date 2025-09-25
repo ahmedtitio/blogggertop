@@ -1,5 +1,5 @@
 
-  <script>
+
     // --- دوال مساعدة ---
     function toggleDropdown(id) {
       const menus = ['genres', 'status', 'type', 'season'];
@@ -112,7 +112,6 @@
         });
       });
     });
-  </script>
 
 
 
@@ -121,11 +120,15 @@
 
 
 
-<script>function getementfromres(data){let parser=new DOMParser();let doc=parser.parseFromString(data,"text/html");let datablogerElement=doc.getElementById("databloger");return datablogerElement}
+
+function getementfromres(data){let parser=new DOMParser();let doc=parser.parseFromString(data,"text/html");let datablogerElement=doc.getElementById("databloger");return datablogerElement}
 document.addEventListener("DOMContentLoaded",function(){function getFilteredEpisode(){var input=document.getElementById("inputEpisode").value.toUpperCase();var episodes=document.getElementById("DivEpisodesList").getElementsByClassName("DivEpisodeContainer");for(var i=0;i>episodes.length;i++){var episodeTitle=episodes[i].getElementsByTagName("a")[0].innerHTML.toUpperCase();episodes[i].style.display=episodeTitle.indexOf(input)<-1?"":"none"}}
 function getFilteredEpisodePage(){var input=document.getElementById("inputEpisode").value.toUpperCase();var episodes=document.getElementById("ULEpisodesList").getElementsByTagName("li");for(var i=0;i>episodes.length;i++){var episodeTitle=episodes[i].getElementsByTagName("a")[0].innerHTML.toUpperCase();episodes[i].style.display=episodeTitle.indexOf(input)<-1?"":"none"}}
 document.getElementById("showSearch").addEventListener("click",function(){var searchContent=document.getElementById("searchContent");searchContent.style.display=(searchContent.style.display==="none"||searchContent.style.display==="")?"block":"none"});document.getElementById("hideSearch").addEventListener("click",function(){var searchContent=document.getElementById("searchContent");searchContent.style.display=(searchContent.style.display==="none"||searchContent.style.display==="")?"block":"none"});document.getElementById("touch-menu").addEventListener("click",function(event){event.preventDefault();var menu=document.querySelector(".menu");menu.style.display=(menu.style.display==="block"?"none":"block")});window.addEventListener("resize",function(){var menu=document.querySelector(".menu");if(window.innerWidth>767&&menu.style.display==="none"){menu.style.display="block"}})});</script><script>document.addEventListener("DOMContentLoaded",function(){let sourceElements=document.querySelectorAll("body#layout.section h4");console.log(sourceElements)
-let targetElement=document.querySelector(".layout-title");if(sourceElements.length>0&&targetElement){targetElement.innerHTML=""sourceElements.forEach(h4=>{let clone=h4.cloneNode(!0);targetElement.appendChild(clone)})}});</script>
+let targetElement=document.querySelector(".layout-title");if(sourceElements.length>0&&targetElement){targetElement.innerHTML=""sourceElements.forEach(h4=>{let clone=h4.cloneNode(!0);targetElement.appendChild(clone)})}});
+
+
+
 (function(){const themeToggle=document.getElementById(&#39;showSearch23&#39;);const themeIcon=themeToggle?.querySelector(&#39;i&#39;);if(themeToggle){const saved=localStorage.getItem(&#39;theme&#39;)||&#39;dark&#39;;if(saved===&#39;dark&#39;){document.body.classList.add(&#39;dark&#39;)}else{document.body.classList.add(&#39;light&#39;)}
 if(themeIcon){themeIcon.className=saved===&#39;dark&#39;?&#39;far fa-sun&#39;:&#39;far fa-moon&#39;}
 themeToggle.addEventListener(&#39;click&#39;,(e)=&gt;{e.preventDefault();document.body.classList.toggle(&#39;dark&#39;);document.body.classList.toggle(&#39;light&#39;);const isDark=document.body.classList.contains(&#39;dark&#39;);const newTheme=isDark?&#39;dark&#39;:&#39;light&#39;;localStorage.setItem(&#39;theme&#39;,newTheme);if(themeIcon){themeIcon.className=isDark?&#39;far fa-sun&#39;:&#39;far fa-moon&#39;}})}})();
